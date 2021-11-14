@@ -8,10 +8,8 @@ const nextApp = next({ dev });
 const handle = nextApp.getRequestHandler();
 require("dotenv").config({ path: "./config.env" });
 const connectDb = require("./utilsServer/connectDb");
-const cors = require('cors')
 connectDb();
 app.use(express.json());
-app.use(cors()) 
 const PORT = process.env.PORT || 3000;
 const { addUser, removeUser, findConnectedUser } = require("./utilsServer/roomActions");
 const {
